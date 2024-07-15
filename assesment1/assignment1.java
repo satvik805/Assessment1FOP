@@ -17,7 +17,7 @@ public class assignment1
        System.out.println(name);
        System.out.println("Name of the assignment : " + name);
        System.out.println("Marks of students : " + marks);
-       int[] highestlowest = computeminmax(marks); // compute highest and lowest marks out of 30 students
+       float[] highestlowest = computeminmax(marks); // compute highest and lowest marks out of 30 students
        System.out.println("Highest marks obtained in " + name + " is " + highestlowest[0]);
        System.out.println("Lowest marks obtained in " + name + " is " + highestlowest[1]);
        double[] meanstd = MeanStd(marks);
@@ -27,10 +27,22 @@ public class assignment1
    public static ArrayList<Float> getStudentMarks(Scanner s){
        
    }
-   public static int[] computeminmax(ArrayList<Float> marks){
+   public static float[] computeminmax(ArrayList<Float> marks){
        
    }
    public static double[] MeanStd(ArrayList<Float> marks){
-       
+       double sum = 0;
+       double variance = 0;
+       for(float mark : marks){
+           sum += mark;
+           
+       }
+       double mean = sum / marks.size();
+       for(double mark : marks){
+           variance += Math.pow(mark - mean, 2);
+       }
+       double stddeviation = Math.sqrt(variance/marks.size());
+       double[] meanstd = {mean, stddeviation};
+       return meanstd;
    }
 }
