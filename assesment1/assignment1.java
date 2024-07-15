@@ -42,7 +42,18 @@ public class assignment1
        return marks; 
    }
    public static float[] computeminmax(ArrayList<Float> marks){
-       
+       float highest = 0;
+       float lowest = marks.get(0);
+       for(float mark : marks){
+           if(mark > highest){
+               highest = mark;
+           }
+           if(mark < lowest){
+               lowest = mark;
+           }
+       }
+       float [] highestlowest = {highest, lowest};
+       return highestlowest;
    }
    public static double[] MeanStd(ArrayList<Float> marks){
        double sum = 0;
