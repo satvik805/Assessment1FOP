@@ -25,7 +25,21 @@ public class assignment1
        System.out.println("Standard deviation : " + meanstd[1]);
    }
    public static ArrayList<Float> getStudentMarks(Scanner s){
-       
+       ArrayList<Float> marks = new ArrayList<>();
+       for(int i = 0 ; i < 30 ; i++){
+           System.out.print("Marks of student " + (i + 1) + " : ");
+           float n = s.nextFloat();
+           System.out.println();
+           if (n >= 0 && n <= 30){
+               
+               marks.add(n);
+               
+           }else{
+               System.out.println("Please enter a number between 0 and 30");
+               i = i - 1;
+           }
+       }
+       return marks; 
    }
    public static float[] computeminmax(ArrayList<Float> marks){
        
