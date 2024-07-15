@@ -45,6 +45,7 @@ public class assignment1
        float highest = 0;
        float lowest = marks.get(0);
        for(float mark : marks){
+           
            if(mark > highest){
                highest = mark;
            }
